@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float torqueForce = 1f;
+    //public float torqueForce = 1f;
     public float jumpForce = 5f;
 
     public float checkRadius = 0.1f;
@@ -12,38 +12,27 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public void AddTorque(float torque)
+    {
+        rb.AddTorque(torque);
+    }
+
+    public void Jump()
+    {
+        if (IsGrounded())
+        {
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
-    {
-        // Roll left/right
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            rb.AddTorque(-torqueForce); // clockwise
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            rb.AddTorque(torqueForce); // counter-clockwise
-        }
+    void FixedUpdate() { }
 
-       
-    }
-
-    void Update()
-    {
-         // Jump
-         // GetKeyDown() does not work in FixedUpdate()
-        if (Input.GetKeyDown(KeyCode.UpArrow)) 
-        {
-            if (IsGrounded())
-            {
-                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            }
-        }
-    }
+    void Update() { }
 
     public bool IsGrounded()
     {
