@@ -1006,12 +1006,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oscReceiver: {fileID: 1650076968}
   oscTransmitter: {fileID: 1650076969}
-  gameManager: {fileID: 964819244}
   player: {fileID: 383360519}
-  betaInMin: 0
-  betaInMax: 1023
-  betaOutMin: 0
-  betaOutMax: 1
+  betaInMin: -1
+  betaInMax: 1
+  betaOutMin: -40
+  betaOutMax: 40
 --- !u!1 &1966386172
 GameObject:
   m_ObjectHideFlags: 0
