@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "unity-rock-roll.sln"
+    "dotnet.defaultSolution": "rouler_unity.sln"
 }
